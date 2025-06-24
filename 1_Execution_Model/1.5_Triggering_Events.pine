@@ -1,0 +1,13 @@
+//@version=6
+
+// This script reruns everytime we scroll towards left. 
+// Scrolling resets the value of count variable to 0.
+
+indicator("Triggering Events Experiment", overlay = true)
+
+var int left  = chart.left_visible_bar_time
+var int count = 0
+
+if barstate.isrealtime
+	count := count + 1
+	log.info("The current count is " + str.tostring(count) + " and left is " + str.tostring(left))
