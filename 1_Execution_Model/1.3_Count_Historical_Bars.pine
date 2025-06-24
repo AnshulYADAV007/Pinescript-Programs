@@ -1,0 +1,12 @@
+//@version=6
+
+indicator("Count Historical Bars", overlay = true)
+
+var int count = 0
+
+if barstate.isconfirmed
+	count := count + 1
+
+if barstate.islast
+	log.info("My count of historical bars is " + str.tostring(count))
+	log.info("The current bar index is " + str.tostring(bar_index))
