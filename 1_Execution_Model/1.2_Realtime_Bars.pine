@@ -1,0 +1,6 @@
+//@version=6
+
+indicator("Realtime Bars", overlay = true)
+
+if barstate.isrealtime
+	log.info("This is a realtime bar. Time is " + str.tostring(time) + " and price is " + str.tostring(close))
