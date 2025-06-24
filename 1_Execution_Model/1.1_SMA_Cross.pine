@@ -1,0 +1,12 @@
+//@version=6
+
+indicator("SMA Cross", overlay = true)
+
+src = close
+a 	= ta.sma(	src, 20)
+b	= ta.sma(	src, 50)
+c	= ta.cross(	a  , b )
+
+plot(		a, 	color = color.red	)
+plot(		b, 	color = color.blue	)
+plotshape(	c, 	color = color.white )
