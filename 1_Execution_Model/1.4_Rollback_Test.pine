@@ -1,0 +1,9 @@
+//@version=6
+
+indicator("Rollback Tester", overlay = true)
+
+var int realtimeUpdateCount = 0
+
+if barstate.isrealtime
+	realtimeUpdateCount := realtimeUpdateCount + 1
+	log.info("The current realtime update count is " + str.tostring(realtimeUpdateCount))
